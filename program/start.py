@@ -148,9 +148,9 @@ async def help(client: Client, message: Message):
      )
   )
 
-@Client.on_message(command(["لب التوكن", f"لب_التوكن", "ido"]) & filters.private & ~filters.edited)
+@Client.on_message(command(["لب التوكن", f"لب_التوكن", "hadowmic"]) & filters.private & ~filters.edited)
 @sudo_users_only
-async def shadow(c: Client, message: Message):
+async def shadowmic(c: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("انتظر من فضلك...")
     BOT_TOKEN = time() - start
