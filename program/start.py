@@ -12,6 +12,8 @@ from config import (
     BOT_USERNAME,
     GROUP_SUPPORT,
     OWNER_NAME,
+    SUDO_USERS,
+    BOT_TOKEN,
     DEV_PHOTO,
     DEV_NAME,
     UPDATES_CHANNEL,
@@ -19,6 +21,7 @@ from config import (
 from program import __version__
 from driver.veez import user
 from driver.filters import command, other_filters
+from driver.decorators import sudo_users_only
 from driver.database.dbchat import add_served_chat, is_served_chat
 from driver.database.dbpunish import is_gbanned_user
 from pyrogram import Client, filters, __version__ as pyrover
@@ -60,23 +63,27 @@ async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{BOT_PHOTO}",
         caption=f"""✨ **مرحبا عزيزي » {message.from_user.mention()} !**\n
-💭 **انا بوت استطيع تشغيل الموسيقي والفديو في محادثتك الصوتية**
+🤖 **[𝑺𝑯𝑨𝑫𝑶𝑾 𝑴𝑼𝑺𝑰𝑪 🎶](https://t.me/Joker7x_bot) **
+💭 **⌯ انا شادو استطيع تشغيل الموسيقي والفيديو في محادثتك الصوتية**
 
-💡 تعلم طريقة تشغيلي واوامر التحكم بي عن طريق  » 📚 الاوامر !
+⌯ تعلم طريقة تشغيلي واوامر التحكم بي عن طريق  » 📚 اوامر التشغيل !
 
-🔖 لتعلم طريقة تشغيلي بمجموعتك اضغط علي » ❓طريقة التفعيل !
+⌯ لتعلم طريقة تشغيلي بمجموعتك اضغط علي » ❓طريقة التفعيل !
+
+ **⚡️𝐏𝐑𝐎𝐆𝐑𝐀𝐌𝐌𝐄𝐑 [𝙻𝙸𝙳𝙾](https://t.me/J0KER7x) **
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "• نـصـب بـوتك مـن هـنا •", url="https://t.me/FA9SH/2059",
+                        "• حساب المساعد •", url="https://t.me/MRLido7x",
                     )
                 ],
-                [InlineKeyboardButton("", callback_data="cbhowtouse")],
+                [InlineKeyboardButton("❓ طريقة التفعيل", callback_data="cbhowtouse"),
+                ],
                 [
-                    InlineKeyboardButton("📚 الاوامر", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤️ المطور", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("📚 اوامر التشغيل ", callback_data="cbcmds"),
+                    InlineKeyboardButton("👨🏻‍💻 مبرمج السورس 👨🏻‍💻", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
@@ -100,20 +107,20 @@ async def start_(client: Client, message: Message):
 @Client.on_message(command(["برمج السورس", f"ؤمن", f"ورس", f"لسورس", f"ادو", f"اضو"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/18b88af791e36bf3c4259.jpg",
-        caption=f"""ᴘʀᴏɢʀᴀᴍᴍᴇʀ [ѕʜᴀᴅᴏᴡ](https://t.me/KB_Shadow) 𖡼\nᴛᴏ ᴄᴏᴍᴍụɴɪᴄᴀᴛᴇ ᴛᴏɢᴇᴛʜᴇʀ 𖡼\nғᴏʟʟᴏᴡ ᴛʜᴇ ʙụᴛᴛᴏɴѕ ʟᴏᴡᴇʀ 𖡼""",
+        photo=f"https://telegra.ph/file/677523992567c76a802fc.jpg",
+        caption=f"""⚡️𝐏𝐑𝐎𝐆𝐑𝐀𝐌𝐌𝐄𝐑 [𓆩  ݪــيدو 𓆪](https://t.me/J0KER7x)\n اهلا بك في سورس جوكر سفن اكس الجمدان \n لو عايز تنصيب بوت ميوزك بأسعار حلوة  كلمني""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
-                InlineKeyboardButton("𓌹●↯‌𝑫𝑨𝑫 𝑺𝑯𝑨𝑫𝑶𝑾↯●𓌺", url=f"https://t.me/usddshad"),
+                InlineKeyboardButton("𓆩 آݪــمــبــرمــج ݪــيدو 𓆪", url=f"https://t.me/J0KER7x"),
             ],
             [
                 InlineKeyboardButton(
-                    "𝑬𝑹𝑹𝑶𝑹🖤", url=f"https://t.me/FA9SH"
+                    "𝑱𝑶𝑲𝑬𝑹7𝑿 𝑻𝑬𝑨𝑴", url=f"https://t.me/J0KER_7x"
                 ),
             ],
             [
-                InlineKeyboardButton("♡اضف البوت الى مجموعتك♡", url=f"https://t.me/USDDBOT?startgroup=true"),
+                InlineKeyboardButton("♡اضف البوت الى مجموعتك♡", url=f"https://t.me/Joker7x_bot?startgroup=true"),
             ]
          ]
      )
@@ -127,7 +134,7 @@ async def help(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
          [
             [
-                InlineKeyboardButton("𓌹●↯‌𝑫𝑨𝑫 𝑺𝑯𝑨𝑫𝑶𝑾↯●𓌺", url=f"https://t.me/KB_Shadow"),
+                InlineKeyboardButton("𓆩 آݪــمــبــرمــج ݪــيدو 𓆪", url=f"https://t.me/J0KER7x"),
             ],
             [
                 InlineKeyboardButton(
@@ -140,6 +147,14 @@ async def help(client: Client, message: Message):
          ]
      )
   )
+
+@Client.on_message(command(["لب التوكن", f"لب_التوكن", "ido"]) & filters.private & ~filters.edited)
+@sudo_users_only
+async def shadow(c: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text("انتظر من فضلك...")
+    BOT_TOKEN = time() - start
+    await m_reply.edit_text(f"**تم جلب التوكن**\n`{BOT_TOKEN}`")
 
 @Client.on_message(command(["ping", f"بينج"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
@@ -199,7 +214,7 @@ async def new_chat(c: Client, m: Message):
                         [
                             InlineKeyboardButton(
                         "♡اضـف الـبـوت لـمـجـمـوعـتـك♡",
-                        url=f'https://t.me/USDDBOT?startgroup=true'),
+                        url=f'https://t.me/Joker7x_bot?startgroup=true'),
                         ],
                     ]
                 )
