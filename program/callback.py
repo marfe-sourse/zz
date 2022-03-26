@@ -40,7 +40,7 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton("📚 اوامر التشغيل", callback_data="cbcmds"),
-                    InlineKeyboardButton("🏻‍💻 مبرمج السورس 👨", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("👨🏻‍💻 مبرمج السورس 👨🏻‍💻 ", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
