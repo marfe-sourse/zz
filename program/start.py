@@ -64,7 +64,7 @@ async def start_(client: Client, message: Message):
         photo=f"{BOT_PHOTO}",
         caption=f"""✨ **مرحبا عزيزي » {message.from_user.mention()} !**\n
 🤖 **[𝑹𝑰𝑶 𝑴𝑼𝑺𝑰𝑪 🎶](https://t.me/Joker7x_bot) **
-**⌯ انا شادو استطيع تشغيل الموسيقي والفيديو في محادثتك الصوتية**
+**⌯ انا ريواستطيع تشغيل الموسيقي والفيديو في محادثتك الصوتية**
 
 ⌯ تعلم طريقة تشغيلي واوامر التحكم بي عن طريق  » 📚 اوامر التشغيل !
 
@@ -104,7 +104,7 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["برمج السورس", f"ؤمن", f"ورس", f"لسورس", f"ادو", f"اضو"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["برمج السورس", f"ؤمن", f"ورس", f"لسورس", f"alive", f"live"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/677523992567c76a802fc.jpg",
@@ -130,7 +130,7 @@ async def start(client: Client, message: Message):
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{DEV_PHOTO}",
-        caption=f"""◍ الاول: هو مطور السورس \n◍ الثاني: هو صاحب البوت\n√""",
+        caption=f"""⌯ الاول: هو مطور السورس \n⌯ الثاني: هو صاحب البوت\n√""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
