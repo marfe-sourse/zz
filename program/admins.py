@@ -21,7 +21,7 @@ from pyrogram.types import (
 )
 
 
-@Client.on_message(command(["reload", f"تحديث", "حديث"]) & other_filters)
+@Client.on_message(command(["reload", f"تحديث", "حدث"]) & other_filters)
 @authorized_users_only
 async def update_admin(client, message):
     global admins
@@ -35,7 +35,7 @@ async def update_admin(client, message):
     )
 
 
-@Client.on_message(command(["skip", f"تخطي", "خطي"]) & other_filters)
+@Client.on_message(command(["skip", f"تخطي", "تخطى"]) & other_filters)
 @authorized_users_only
 async def skip(c: Client, m: Message):
     user_id = m.from_user.id
@@ -82,7 +82,7 @@ async def skip(c: Client, m: Message):
 
 
 @Client.on_message(
-    command(["stop", f"stop@{BOT_USERNAME}", "end", f"نهاء", "انهاء"])
+    command(["ايقاف", f"stop@{BOT_USERNAME}", "end", f"نهاء", "انهاء"])
     & other_filters
 )
 @authorized_users_only
@@ -100,7 +100,7 @@ async def stop(client, m: Message):
 
 
 @Client.on_message(
-    command(["pause", f"pause@{BOT_USERNAME}", "vpause"]) & other_filters
+    command(["مؤقت", f"pause@{BOT_USERNAME}", "vpause"]) & other_filters
 )
 @authorized_users_only
 async def pause(client, m: Message):
@@ -109,7 +109,7 @@ async def pause(client, m: Message):
         try:
             await call_py.pause_stream(chat_id)
             await m.reply(
-                "⏸ **تم ايقاف المسار موقتآ**\n\n• **لٲستئناف البث استخدم**\n» /resume الامر."
+                "⏸ **تم ايقاف المسار موقتآ**\n\n• **لٲستئناف البث استخدم**\n» استئناف > الامر >."
             )
         except Exception as e:
             await m.reply(f"🚫 **خطأ:**\n\n`{e}`")
@@ -118,7 +118,7 @@ async def pause(client, m: Message):
 
 
 @Client.on_message(
-    command(["resume", f"resume@{BOT_USERNAME}", "vresume"]) & other_filters
+    command(["استئناف", f"resume@{BOT_USERNAME}", "vresume"]) & other_filters
 )
 @authorized_users_only
 async def resume(client, m: Message):
@@ -127,7 +127,7 @@ async def resume(client, m: Message):
         try:
             await call_py.resume_stream(chat_id)
             await m.reply(
-                "▶️ **تم استئناف المسار**\n\n• **لايقاف البث موقتآ استخدم**\n» /pause الامر"
+                "▶️ **تم استئناف المسار**\n\n• **لايقاف البث موقتآ استخدم**\n» مؤقت > الامر >"
             )
         except Exception as e:
             await m.reply(f"🚫 **خطأ:**\n\n`{e}`")
@@ -136,7 +136,7 @@ async def resume(client, m: Message):
 
 
 @Client.on_message(
-    command(["mute", f"mute@{BOT_USERNAME}", "vmute"]) & other_filters
+    command(["كتم", f"mute@{BOT_USERNAME}", "vmute"]) & other_filters
 )
 @authorized_users_only
 async def mute(client, m: Message):
@@ -145,7 +145,7 @@ async def mute(client, m: Message):
         try:
             await call_py.mute_stream(chat_id)
             await m.reply(
-                "🔇 **تم كتم الصوت**\n\n• **لرفع الكتم استخدم**\n» /unmute الامر" 
+                "🔇 **تم كتم الصوت**\n\n• **لرفع الكتم استخدم**\n» الغاء كتم > الامر >" 
             )
         except Exception as e:
             await m.reply(f"🚫 **خطأ:**\n\n`{e}`")
@@ -154,7 +154,7 @@ async def mute(client, m: Message):
 
 
 @Client.on_message(
-    command(["unmute", f"unmute@{BOT_USERNAME}", "vunmute"]) & other_filters
+    command(["الغاء كتم", f"unmute@{BOT_USERNAME}", "vunmute"]) & other_filters
 )
 @authorized_users_only
 async def unmute(client, m: Message):
@@ -163,7 +163,7 @@ async def unmute(client, m: Message):
         try:
             await call_py.unmute_stream(chat_id)
             await m.reply(
-                "🔊 **تم رفع الكتم**\n\n• **لكتم الصوت استخدم**\n» /mute الامر"
+                "🔊 **تم رفع الكتم**\n\n• **لكتم الصوت استخدم**\n» كتم > الامر >"
             )
         except Exception as e:
             await m.reply(f"🚫 **خطأ:**\n\n`{e}`")
@@ -265,7 +265,7 @@ async def cbunmute(_, query: CallbackQuery):
 
 
 @Client.on_message(
-    command(["volume", f"volume@{BOT_USERNAME}", "تحكم"]) & other_filters
+    command(["مستوى", f"volume@{BOT_USERNAME}", "تحكم"]) & other_filters
 )
 @authorized_users_only
 async def change_volume(client, m: Message):
