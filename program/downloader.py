@@ -35,7 +35,7 @@ ydl_opts = {
 }
 
 
-@Client.on_message(command(["حميل", f"تحميل", "song"]) & ~filters.edited)
+@Client.on_message(command(["حملي", f"تحميل", "song"]) & ~filters.edited)
 def song(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("🔎 جاري البحث انتظر قليلآ...")
@@ -60,7 +60,7 @@ def song(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**🎧 الرافع [🎶 𝑹𝑰𝑶 𝑴𝑼𝑺𝑰𝑪 ](https://t.me/Joker7x_bot)**"
+        rep = f"**🎧 تم التحميل بواسطةه @{bn}**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
@@ -87,7 +87,7 @@ def song(_, message):
 
 
 @Client.on_message(
-    command(["vsong", f"vsong@{bn}", "video", f"فيديو"]) & ~filters.edited
+    command(["ابحث", f"vsong@{bn}", "video", f"فيد"]) & ~filters.edited
 )
 async def vsong(client, message):
     ydl_opts = {
@@ -135,7 +135,7 @@ async def vsong(client, message):
         print(e)
 
 
-@Client.on_message(command(["lyric", f"بحث"]))
+@Client.on_message(command(["كلمات", f"كلم"]))
 async def lyrics(_, message):
     try:
         if len(message.command) < 2:
