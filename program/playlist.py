@@ -15,11 +15,11 @@ from driver.filters import command, other_filters
 
 
 keyboard = InlineKeyboardMarkup(
-    [[InlineKeyboardButton("🗑 اغلاق", callback_data="cls")]]
+    [[InlineKeyboardButton("• اغلاق •", callback_data="cls")]]
 )
 
 
-@Client.on_message(command(["playlist", f"القائمه", "لست", f"قائمه"]) & other_filters)
+@Client.on_message(command(["القائمة", f"القائمه", "لسته", f"قائمه"]) & other_filters)
 async def playlist(client, m: Message):
    chat_id = m.chat.id
    if chat_id in QUEUE:
