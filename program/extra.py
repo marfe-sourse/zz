@@ -30,7 +30,7 @@ async def broadcast(c: Client, message: Message):
                 sent += 1
             except Exception:
                 pass
-        await message.reply_text(f"✅ تمت الاذاعه إلى {sent} جروب في البوت.")
+        await message.reply_text(f"✓ تمت الاذاعه إلى {sent} كروب في البوت.")
         return
     if len(message.command) < 2:
         await message.reply_text(
@@ -50,7 +50,7 @@ async def broadcast(c: Client, message: Message):
             sent += 1
         except Exception:
             pass
-    await message.reply_text(f"✅ تمت الاذاعه إلى {sent} جروب في البوت.")
+    await message.reply_text(f"✓ تمت الاذاعه إلى {sent} كروب في البوت.")
 
 
 @Client.on_message(command(["ذت", f"ثبت"]) & ~filters.edited)
@@ -80,7 +80,7 @@ async def broadcast_pin(c: Client, message: Message):
             except Exception:
                 pass
         await message.reply_text(
-            f"✅ تم تثبيت الرساله في {sent} جروب في البوت."
+            f"✓ تم تثبيت الرساله في {sent} كروب في البوت."
         )
         return
     if len(message.command) < 2:
@@ -108,5 +108,5 @@ async def broadcast_pin(c: Client, message: Message):
         except Exception:
             pass
     await message.reply_text(
-        f"✅ تم تثبيت الرساله في {sent} جروب في البوت."
+        f"✓ تم تثبيت الرساله في {sent} كروب في البوت."
     )
