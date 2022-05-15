@@ -11,13 +11,13 @@ from pyrogram.types import (
 def stream_markup(user_id):
   buttons = [
     [
-      InlineKeyboardButton(text="• الـقـائـمـه تحكم♪", callback_data=f'cbmenu | {user_id}'),
-      InlineKeyboardButton(text="• الـتـحـديـثـات♪", url=f'https://t.me/J0KER_7x'),
+      InlineKeyboardButton(text="‹ قـائـمـة التحكم ›", callback_data=f'cbmenu | {user_id}'),
+      InlineKeyboardButton(text="‹ قناة التحديثات ›", url=f'https://t.me/DJJJJJe'),
     ],
     [
     InlineKeyboardButton(
-                        "♡اضـف الـبـوت لـمـجـمـوعـتـك♡",
-                        url=f'https://t.me/Joker7x_bot?startgroup=true'),
+                        "• قـناة السوࢪس •",
+                        url=f'https://t.me/vrrrrvr'),
     ],
   ]
   return buttons
@@ -35,7 +35,7 @@ def menu_markup(user_id):
       InlineKeyboardButton(text="🔊", callback_data=f'cbunmute | {user_id}'),
     ],
     [
-      InlineKeyboardButton(text="🗑 اغلاق", callback_data='cls'),
+      InlineKeyboardButton(text="• اغلاق •", callback_data='cls'),
     ]
   ]
   return buttons
@@ -45,7 +45,7 @@ close_mark = InlineKeyboardMarkup(
   [
     [
       InlineKeyboardButton(
-        "🔙 رجوع", callback_data="cbmenu"
+        "• ࢪجوع ", callback_data="cbmenu"
       )
     ]
   ]
@@ -56,7 +56,7 @@ back_mark = InlineKeyboardMarkup(
   [
     [
       InlineKeyboardButton(
-        "🔙 رجوع", callback_data="cbmenu"
+        "• ࢪجوع •", callback_data="cbmenu"
       )
     ]
   ]
