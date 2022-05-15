@@ -27,7 +27,7 @@ async def join_chat(c: Client, m: Message):
 
 
 @Client.on_message(
-    command(["userbotleave", f"غادر", "ادر"]) & other_filters
+    command(["userbotleave", f"غادر", "مساعد غادر."]) & other_filters
 )
 @authorized_users_only
 async def leave_chat(_, m: Message):
@@ -45,7 +45,7 @@ async def leave_chat(_, m: Message):
         )
 
 
-@Client.on_message(command(["leaveall", f"مغادره"]))
+@Client.on_message(command(["leaveall", f"غادر من الجميع"]))
 @sudo_users_only
 async def leave_all(client, message):
     if message.from_user.id not in SUDO_USERS:
