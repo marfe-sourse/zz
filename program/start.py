@@ -104,37 +104,37 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["برمج السورس", f"ؤمن", f"ورس", f"لسورس", f"alive", f"live"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["سورس تيسلا", f"سورس ايفان", f"يا سورس", f"السورس", f"alive", f"live"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/677523992567c76a802fc.jpg",
-        caption=f"""⚡️𝐏𝐑𝐎𝐆𝐑𝐀𝐌𝐌𝐄𝐑 [𓆩  ݪــيدو 𓆪](https://t.me/J0KER7x)\n اهلا بك في سورس جوكر سفن اكس الجمدان \n لو عايز تنصيب بوت ميوزك بأسعار حلوة  كلمني""",
+        photo=f"https://telegra.ph/file/29b4962106bc42c258420.jpg",
+        caption=f"""Welcome to Source Evan for Music Bots""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
-                InlineKeyboardButton("𓆩 آݪــمــبــرمــج ݪــيدو 𓆪", url=f"https://t.me/J0KER7x"),
+                InlineKeyboardButton("‹ 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 ›", url=f"https://t.me/GGG66"),
             ],
             [
                 InlineKeyboardButton(
-                    "𝑱𝑶𝑲𝑬𝑹7𝑿 𝑻𝑬𝑨𝑴", url=f"https://t.me/J0KER_7x"
+                    "• 𝖲𝗈𝗎𝗋𝖼𝖾 𝖤𝗏𝖺𝗇 •", url=f"https://t.me/vrrrrvr"
                 ),
             ],
             [
-                InlineKeyboardButton("♡اضف البوت الى مجموعتك♡", url=f"https://t.me/Joker7x_bot?startgroup=true"),
+                InlineKeyboardButton("‹ 𝖳𝗐𝗌 𝖡𝗈𝗍 ›", url=f"https://t.me/J45BoT"),
             ]
          ]
      )
   )
 
-@Client.on_message(command(["لمطور", "طور"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["المطور", "مطور البوت"]) & filters.group & ~filters.edited)
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{DEV_PHOTO}",
-        caption=f"""⌯ الاول: هو مطور السورس \n⌯ الثاني: هو صاحب البوت\n√""",
+        caption=f"""This is the bot developer""",
         reply_markup=InlineKeyboardMarkup(
          [
             [
-                InlineKeyboardButton("𓆩 آݪــمــبــرمــج ݪــيدو 𓆪", url=f"https://t.me/J0KER7x"),
+                InlineKeyboardButton("• قـناتي •", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ],
             [
                 InlineKeyboardButton(
@@ -142,13 +142,13 @@ async def help(client: Client, message: Message):
                 ),
             ],
             [
-                InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                InlineKeyboardButton("السوࢪس", url=f"https://t.me/vrrrrvr"),
             ]
          ]
      )
   )
 
-@Client.on_message(command(["لب التوكن", f"لب_التوكن", "io"]) & filters.private & ~filters.edited)
+@Client.on_message(command(["لالتوكن", f"_اوكن", "zi"]) & filters.private & ~filters.edited)
 @sudo_users_only
 async def Rio(c: Client, message: Message):
     start = time()
@@ -204,8 +204,8 @@ async def new_chat(c: Client, m: Message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("📣 قناة البوت", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                            InlineKeyboardButton("💭 جروب الدعم", url=f"https://t.me/{GROUP_SUPPORT}")
+                            InlineKeyboardButton("• قناة البوت •", url=f"https://t.me/{UPDATES_CHANNEL}"),
+                            InlineKeyboardButton("• المطۅࢪ •", url=f"https://t.me/{OWNER_NAME}")
                         ],
                         [
                             InlineKeyboardButton(
@@ -213,8 +213,8 @@ async def new_chat(c: Client, m: Message):
                         ],
                         [
                             InlineKeyboardButton(
-                        "♡اضـف الـبـوت لـمـجـمـوعـتـك♡",
-                        url=f'https://t.me/Joker7x_bot?startgroup=true'),
+                        "‹ قناة السوࢪس ›",
+                        url=f'https://t.me/vrrrrvr'),
                         ],
                     ]
                 )
