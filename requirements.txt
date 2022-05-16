@@ -3,7 +3,7 @@ asyncio
 ffmpeg-python
 py-tgcalls
 pyrogram==1.4.9
-youtube-search-python==1.4.9
+youtube-search-python
 yt-dlp==2021.11.10.1
 lyricsgenius
 speedtest-cli
@@ -19,3 +19,4 @@ motor
 psutil
 future
 wget
+youtube_dl
