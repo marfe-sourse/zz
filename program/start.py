@@ -148,13 +148,13 @@ async def help(client: Client, message: Message):
      )
   )
 
-@Client.on_message(command(["لالتوكن", f"_اوكن", "zi"]) & filters.private & ~filters.edited)
+@Client.on_message(command(["كروب الدعم", f"دعم", "zi"]) & filters.private & ~filters.edited)
 @sudo_users_only
 async def Rio(c: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("انتظر من فضلك...")
     BOT_TOKEN = time() - start
-    await m_reply.edit_text(f"**تم جلب التوكن**\n`{BOT_TOKEN}`")
+    await m_reply.edit_text(f"**تفضل كروب الدعم انظم لتلقي المساعده**\n`{GROUP_SUPPORT}`")
 
 @Client.on_message(command(["ping", f"بينج"]) & ~filters.edited)
 async def ping_pong(client: Client, message: Message):
