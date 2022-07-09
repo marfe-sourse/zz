@@ -58,17 +58,17 @@ def updater():
 @sudo_users_only
 async def update_repo(_, message: Message):
     chat_id = message.chat.id
-    msg = await message.reply("🔄 `processing update...`")
+    msg = await message.reply("🔄 ` جار التحديث ...`")
     update_avail = updater()
     if update_avail:
         await msg.edit("✅ update finished\n\n• bot restarted, back active again in 1 minutes.")
         system("git pull -f && pip3 install --no-cache-dir -r requirements.txt")
         execle(sys.executable, sys.executable, "main.py", environ)
         return
-    await msg.edit(f"bot is **up-to-date** with [main](https://github.com/tesla0T/NewaLmusic/tree/main)", disable_web_page_preview=True)
+    await msg.edit(f"bot is **up-to-date** with [main](https://github.com/marfe-sourse/zz/tree/main)", disable_web_page_preview=True)
 
 
-@Client.on_message(command(["ريستارت", f"restart@{BOT_USERNAME}"]) & ~filters.edited)
+@Client.on_message(command(["تحديث السورس", f"restart@{BOT_USERNAME}"]) & ~filters.edited)
 @sudo_users_only
 async def restart_bot(_, message: Message):
     msg = await message.reply("`restarting bot...`")
