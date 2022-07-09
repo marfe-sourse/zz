@@ -63,14 +63,14 @@ async def start_(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{BOT_PHOTO}",
         caption=f"""✨ **مرحبا عزيزي » {message.from_user.mention()} !**\n
-🤖 **[𝑹𝑰𝑶 𝑴𝑼𝑺𝑰𝑪 🎶](https://t.me/Joker7x_bot) **
-**⌯ انا ريو استطيع تشغيل الموسيقي والفيديو في محادثتك الصوتية**
+🤖 **[.  ‹ ︙𝔇ℜ𝔞𝔤𝔬𝔫 𝔱𝔢𝔞𝔪 . 🎶](https://t.me/c_p_8) **
+**⌯ انا دراكون استطيع تشغيل الموسيقي والفيديو في محادثتك الصوتية**
 
 ⌯ تعلم طريقة تشغيلي واوامر التحكم بي عن طريق  » 📚 اوامر التشغيل !
 
 ⌯ لتعلم طريقة تشغيلي بمجموعتك اضغط علي » ❓طريقة التفعيل !
 
- **⚡️𝐏𝐑𝐎𝐆𝐑𝐀𝐌𝐌𝐄𝐑 [𝙻𝙸𝙳𝙾](https://t.me/J0KER7x) **
+ **.  ‹ ︙𝔇ℜ𝔞𝔤𝔬𝔫 𝔱𝔢𝔞𝔪 . [𝙻𝙸𝙳𝙾](https://t.me/c_p_8) **
 """,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -104,7 +104,7 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["سورس تيسلا", f"سورس ايفان", f"يا سورس", f"السورس", f"alive", f"live"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["سورس تروكس", f" سورس تروكس", f"يا سورس", f"السورس", f"alive", f"live"]) & filters.group & ~filters.edited)
 async def start(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/29b4962106bc42c258420.jpg",
@@ -112,15 +112,15 @@ async def start(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
          [
             [
-                InlineKeyboardButton("‹ 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 ›", url=f"https://t.me/GGG66"),
+                InlineKeyboardButton("‹ 𝖣𝖾𝗏𝖾𝗅𝗈𝗉𝖾𝗋 ›", url=f"https://t.me/S_L_3"),
             ],
             [
                 InlineKeyboardButton(
-                    "• 𝖲𝗈𝗎𝗋𝖼𝖾 𝖤𝗏𝖺𝗇 •", url=f"https://t.me/vrrrrvr"
+                    "• .  ‹ ︙𝔇ℜ𝔞𝔤𝔬𝔫 𝔱𝔢𝔞𝔪 . •", url=f"https://t.me/c_p_8"
                 ),
             ],
             [
-                InlineKeyboardButton("‹ 𝖳𝗐𝗌 𝖡𝗈𝗍 ›", url=f"https://t.me/J45BoT"),
+                InlineKeyboardButton("‹ 𝖳𝗐𝗌 𝖡𝗈𝗍 ›", url=f"https://t.me/s_l_3"),
             ]
          ]
      )
@@ -142,7 +142,7 @@ async def help(client: Client, message: Message):
                 ),
             ],
             [
-                InlineKeyboardButton("السوࢪس", url=f"https://t.me/vrrrrvr"),
+                InlineKeyboardButton("السوࢪس", url=f"https://t.me/c_p_8"),
             ]
          ]
      )
@@ -214,7 +214,7 @@ async def new_chat(c: Client, m: Message):
                         [
                             InlineKeyboardButton(
                         "‹ قناة السوࢪس ›",
-                        url=f'https://t.me/vrrrrvr'),
+                        url=f'https://t.me/c_p_8'),
                         ],
                     ]
                 )
